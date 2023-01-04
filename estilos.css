@@ -1,6 +1,6 @@
 body{
     width: 414px;
-    background-color: pink;
+    background-color: #E5E5E5;
 }
 
 header{
@@ -11,7 +11,11 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position:sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 header h1{
@@ -30,7 +34,16 @@ header h2{
     padding-left: 21px;
 }
 
-.h1comida{
+.comida{
+    margin-bottom: 20px;
+}
+
+section{
+    margin-top: 30px;
+    margin-left: 19px;
+}
+
+section h1{
     font-family: Righteous;
     font-size: 26px;
     font-weight: 400;
@@ -42,13 +55,19 @@ header h2{
     display: flex;
     overflow: hidden;
     overflow-x: scroll;
+    justify-content: space-between;
+    margin-top: 17px;
+    
 }
 .opcaocomida div{
     width: 172px;
     height: 216px;
-    background-color: blue;
+    background-color: #FFFFFF;
     position: relative;
+    box-sizing: content-box;
+    flex-shrink: 0;
     margin-right: 16px;
+    border-radius: 9px;
 }   
 
 .opcaocomida img{
@@ -92,4 +111,24 @@ header h2{
     position:absolute;
     top: 184px;
     left:14px;
+}
+
+.confirm{
+    background-color: #FFFFFF;
+    height: 92px;
+    width: 100%;
+    position:sticky;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm button{
+    background-color: #CBCBCB;
+    width: 364px;
+    height: 61px;
+    border-radius: 50px;
 }
