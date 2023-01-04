@@ -1,0 +1,29 @@
+body{
+    width: 414px;
+    background-color: pink;
+}
+
+.topo{
+    background-color: red;
+    width: 100%;
+    height: 92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.h1top{
+    font-family: Righteous;
+    font-size: 44px;
+    font-weight: 400;
+    color: #ffffff;
+    padding-left: 21px;
+}
+.h2top{
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400; 
+    color: #ffffff;
+    padding-left: 21px;
+}
