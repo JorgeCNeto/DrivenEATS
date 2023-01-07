@@ -1,6 +1,10 @@
 body{
     width: 414px;
     background-color: #E5E5E5;
+    
+}
+.transparencia{
+    opacity: 0.4;
 }
 
 header{
@@ -19,7 +23,7 @@ header{
 }
 
 header h1{
-    font-family: Righteous;
+    font-family: 'Righteous';
     font-size: 44px;
     font-weight: 400;
     color: #ffffff;
@@ -27,7 +31,7 @@ header h1{
 }
 
 header h2{
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-size: 18px;
     font-weight: 400; 
     color: #ffffff;
@@ -44,7 +48,7 @@ section{
 }
 
 section h1{
-    font-family: Righteous;
+    font-family: 'Righteous';
     font-size: 26px;
     font-weight: 400;
     color: #333333;
@@ -80,8 +84,8 @@ section h1{
 
 }
 
-.opcoescomida div h1, .opcoesbebida div h1, .opcoessobremesa div h1{
-    font-family: Roboto;
+.alimento{
+    font-family: 'Roboto';
     font-size: 16px;
     font-weight: 700;
     color: #333333;
@@ -92,7 +96,7 @@ section h1{
 }
     
 .opcoescomida div p, .opcoesbebida div p, .opcoessobremesa div p{
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-size: 15px;
     font-weight: 300;
     color: #A6A6A6;
@@ -103,7 +107,7 @@ section h1{
 }
 
 .opcoescomida div h2, .opcoesbebida div h2, .opcoessobremesa div h2{
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-size: 16px;
     font-weight: 400;
     color: #000000;
@@ -123,7 +127,7 @@ ion-icon {
     z-index: 1;
 }
 
-.confirm{
+.confirm-caixa{
     background-color: #FFFFFF;
     height: 92px;
     width: 100%;
@@ -137,11 +141,29 @@ ion-icon {
     margin-top: 16px;
 }
 
-.confirm button{
+.confirm{
     background-color: #CBCBCB;
     width: 364px;
     height: 61px;
     border-radius: 50px;
+}
+.confirm-pronto{
+    background-color: #32B72F;
+    width: 364px;
+    height: 61px;
+    border-radius: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.018em;
+
+color: #FFFFFF;
 }
 
 .selecionado{
@@ -150,4 +172,92 @@ ion-icon {
 }
 .selecionado ion-icon{
     opacity: 1;
+}
+
+.escondido{
+    display: none;
+}
+.confirmacao-pedido{
+    width: 377px;
+    height: 353px;
+    top: calc(50% - 353px/2 - 0.5px);
+    background: #50D074;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    position: fixed;
+    top: calc(50% - 353px/2 - 0.5px);
+    left: 19px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 21px;
+    padding-bottom: 21px;
+}
+
+
+.confirmacao-pedido h1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.itemdopedido{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.precodopedido{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+}
+.envio{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.018em;
+    color: #50D074;
+    left: calc(50% - 329px/2 + 0.5px);
+    width: 329px;
+    height: 52px;
+    background: #FFFFFF;
+    border-radius: 100px;
+}
+
+.cancelamento{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.018em;
+    color: #FFFFFF;
 }
