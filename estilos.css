@@ -70,7 +70,7 @@ section h1{
     border-radius: 9px;
 }   
 
-.opcoescomida img, .opcoesbebida img, .opcoessobremesa img{
+.opcoescomida div img, .opcoesbebida div img, .opcoessobremesa img {
     width: 144px;
     height: 87px;
     border-radius: 4px;
@@ -113,6 +113,16 @@ section h1{
     left:14px;
 }
 
+ion-icon {
+    color: #32B72F;
+    width: 16px;
+    position: absolute;
+    top: 184px;
+    right: 12px;
+    opacity: 0;
+    z-index: 1;
+}
+
 .confirm{
     background-color: #FFFFFF;
     height: 92px;
@@ -137,4 +147,7 @@ section h1{
 .selecionado{
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
     border-radius: 9px;
+}
+.selecionado ion-icon{
+    opacity: 1;
 }

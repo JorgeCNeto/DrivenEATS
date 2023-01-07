@@ -1,3 +1,5 @@
+let comida;
+let comidavalor;
 function selecionarcomida(comidaselecionada){
     const comida = document.querySelector('.opcoescomida .selecionado');
     console.log(comida);
@@ -6,8 +8,11 @@ function selecionarcomida(comidaselecionada){
         comida.classList.remove('selecionado');
     }
     comidaselecionada.classList.add('selecionado');
+    comidavalor.
+    verificadordecompra();
 }
 
+let bebida;
 function selecionarbebida(bebidaselecionada){
     const bebida = document.querySelector('.opcoesbebida .selecionado');
     console.log(bebida);
@@ -16,8 +21,10 @@ function selecionarbebida(bebidaselecionada){
         bebida.classList.remove('selecionado');
     }
     bebidaselecionada.classList.add('selecionado');
+    verificadordecompra();
 }
 
+let sobremesa;
 function selecionarsobremesa(sobremesaselecionada){
     const sobremesa = document.querySelector('.opcoessobremesa .selecionado');
     console.log(sobremesa);
@@ -26,6 +33,22 @@ function selecionarsobremesa(sobremesaselecionada){
         sobremesa.classList.remove('selecionado');
     }
     sobremesaselecionada.classList.add('selecionado');
+    verificadordecompra();
 }
 
+function verificadordecompra(){
+    if (comida !== undefined) {
+        if(bebida !== undefined){
+            if(sobremesa !== undefined){
+                console.log("funcionou");
+                const fecharpedido = document.querySelector('');
+                fecharpedido.classList.add('');
+                fecharpedido.innerHTML = "Fechar pedido";
+            }
+        }
+        
+    }
+
+
+}
 
