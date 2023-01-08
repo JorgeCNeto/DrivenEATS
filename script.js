@@ -96,7 +96,9 @@ function verificadordecompra(){
     if ( comida !== undefined ){
         if ( bebida !== undefined){
             if ( sobremesa !== undefined ) {
-                
+            
+            const ligar = document.querySelector('.confirm');
+            ligar.disabled = false;
             const botaoContinuar = document.querySelector('.confirm');
             botaoContinuar.classList.add('confirm-pronto');
             botaoContinuar.innerHTML = "Fechar pedido";
