@@ -94,7 +94,7 @@ section h1{
 
 }
 
-.alimento{
+.alimento, .drink, .docinho{
     font-family: 'Roboto';
     font-size: 16px;
     font-weight: 700;
@@ -215,7 +215,7 @@ ion-icon {
     color: #FFFFFF;
 }
 
-.itemdopedido{
+.itemdopedido, .itemdopedido2, .itemdopedido3{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -226,6 +226,7 @@ ion-icon {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    width: 326px;
 }
 .precodopedido{
     font-family: 'Roboto';

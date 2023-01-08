@@ -1,7 +1,3 @@
-let comida;
-let ComidaNome;
-let ComidaValor;
-
 function desmarcacaoAnterior(seletor){
     
     const caixaSelecionada = document.querySelector(`${seletor} .selecionado`);
@@ -13,6 +9,9 @@ function desmarcacaoAnterior(seletor){
     }
 }
 
+let comida;
+let ComidaNome;
+let ComidaValor;
 
 function selecionarcomida(comidaselecionada){
 
@@ -21,23 +20,22 @@ function selecionarcomida(comidaselecionada){
     comidaselecionada.classList.add('selecionado');
 
     comida = comidaselecionada.innerHTML;
-    console.log(comida);
-
-    const alimentos = document.querySelectorAll('alimento');
+   
+    const alimentos = document.querySelector('.alimento');
     ComidaNome = alimentos.innerHTML;
-    console.log(ComidaNome);
+       
+    
+    const valor1 = document.querySelector('.preco');
     
     
-    const ComidaValor = document.getElementsByClassName('preco');
-    
-    console.log(ComidaValor);
+    console.log(valor1);
 
     verificadordecompra();
 }
 
-
-
 let bebida;
+let BebidaNome;
+let BebidaValor;
 
 function selecionarbebida(bebidaselecionada){
 
@@ -47,10 +45,15 @@ function selecionarbebida(bebidaselecionada){
 
     bebida = bebidaselecionada.innerHTML;
 
+    const bebidas = document.querySelector('.drink');
+    BebidaNome = bebidas.innerHTML;
+
     verificadordecompra();
 
 }
 let sobremesa;
+let SobremesaNome;
+let SobremesaValor;
 
 function selecionarsobremesa(sobremesaselecionada){
 
@@ -59,6 +62,9 @@ function selecionarsobremesa(sobremesaselecionada){
     sobremesaselecionada.classList.add('selecionado');
 
     sobremesa = sobremesaselecionada.innerHTML;
+
+    const candy = document.querySelector('.docinho');
+    SobremesaNome = candy.innerHTML;
 
     verificadordecompra();
 
@@ -75,21 +81,13 @@ function continuar(){
             painel.classList.remove('escondido');
             const opaco = document.querySelector('.caixa');
             opaco.classList.remove('escondido');
-           
-           
-                       // exibir o painel de carregando o jogo 
-           // const overlay = document.querySelector('.loading-overlay');
-            //overlay.classList.remove('escondido');
-
-            // alterar a mensagem com o jogo selecionado e qtde de joga. selecionado
-           // const mensagem = document.querySelector('.mensagem-iniciando');
-            //mensagem.innerHTML = "INICIANDO POKER 100 com o jogo "+jogo+" e Qtde de Jogadores "+qtdeJogadores;
-           // mensagem.innerHTML = `INICIANDO POKER 100 com o jogo ${jogo} e Qtde de Jogadores ${qtdeJogadores}`;
+          
             }
         }
     }
 }
 
+//let ValorTotal = ComidaValor + BebidaValor + SobremesaValor;
 
 function verificadordecompra(){
    
@@ -99,10 +97,32 @@ function verificadordecompra(){
             
             const ligar = document.querySelector('.confirm');
             ligar.disabled = false;
+
             const botaoContinuar = document.querySelector('.confirm');
             botaoContinuar.classList.add('confirm-pronto');
             botaoContinuar.innerHTML = "Fechar pedido";
-             }
+            console.log(ComidaNome);
+            console.log(BebidaNome);
+            console.log(SobremesaNome);
+
+            const pedido1 = document.querySelector('.itemdopedido h2');
+            pedido1.innerHTML = `${ComidaNome}`
+            const pedido12 = document.querySelector('.itemdopedido h3');
+            pedido12.innerHTML = `${ComidaValor}`
+
+            const pedido2 = document.querySelector('.itemdopedido2 h2');
+            pedido2.innerHTML = `${BebidaNome}`
+            const pedido22 = document.querySelector('.itemdopedido2 h3');
+            pedido22.innerHTML = `${BebidaValor}`
+
+            const pedido3 = document.querySelector('.itemdopedido3 h2');
+            pedido3.innerHTML = `${SobremesaNome}`
+            const pedido32 = document.querySelector('.itemdopedido3 h3');
+            pedido32.innerHTML = `${SobremesaValor}`
+
+            //const pedido32 = document.querySelector('.precodopedido h3');
+            //pedido32.innerHTML = `${ValorTotal}`
+            }
         }    
     }
 }
