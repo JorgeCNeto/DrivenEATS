@@ -21,15 +21,15 @@ function selecionarcomida(comidaselecionada){
 
     comida = comidaselecionada.innerHTML;
    
-    const alimentos = document.querySelector('.alimento');
+    const alimentos = document.querySelector('.selecionado .alimento');
     ComidaNome = alimentos.innerHTML;
        
     
-    const valor1 = document.querySelector('.preco');
-    
-    
-    console.log(valor1);
+    ComidaValor = document.querySelector('.selecionado .preco');
+    ComidaValor = ComidaValor.outerText.replace('R$', '').replace(',', '.');
 
+    ComidaValor = parseFloat(ComidaValor);
+         
     verificadordecompra();
 }
 
@@ -45,9 +45,14 @@ function selecionarbebida(bebidaselecionada){
 
     bebida = bebidaselecionada.innerHTML;
 
-    const bebidas = document.querySelector('.drink');
+    const bebidas = document.querySelector('.selecionado .drink');
     BebidaNome = bebidas.innerHTML;
 
+    BebidaValor = document.querySelector('.selecionado .preco2');
+    BebidaValor = BebidaValor.outerText.replace('R$', '').replace(',', '.');
+
+    BebidaValor = parseFloat(BebidaValor);
+   
     verificadordecompra();
 
 }
@@ -63,9 +68,14 @@ function selecionarsobremesa(sobremesaselecionada){
 
     sobremesa = sobremesaselecionada.innerHTML;
 
-    const candy = document.querySelector('.docinho');
+    const candy = document.querySelector('.selecionado .docinho');
     SobremesaNome = candy.innerHTML;
 
+    SobremesaValor = document.querySelector('.selecionado .preco3');
+    SobremesaValor = SobremesaValor.outerText.replace('R$', '').replace(',', '.');
+
+    SobremesaValor = parseFloat(SobremesaValor);
+   
     verificadordecompra();
 
 }
@@ -87,45 +97,53 @@ function continuar(){
     }
 }
 
-//let ValorTotal = ComidaValor + BebidaValor + SobremesaValor;
-
+let ValorTotal;
 function verificadordecompra(){
    
     if ( comida !== undefined ){
         if ( bebida !== undefined){
             if ( sobremesa !== undefined ) {
             
+            ComidaValor = parseFloat(ComidaValor);
+            BebidaValor = parseFloat(BebidaValor);
+            SobremesaValor = parseFloat(SobremesaValor);
+
+            ValorTotal = ComidaValor + BebidaValor + SobremesaValor;
+            
+
             const ligar = document.querySelector('.confirm');
             ligar.disabled = false;
 
             const botaoContinuar = document.querySelector('.confirm');
             botaoContinuar.classList.add('confirm-pronto');
             botaoContinuar.innerHTML = "Fechar pedido";
-            console.log(ComidaNome);
-            console.log(BebidaNome);
-            console.log(SobremesaNome);
-
+            
             const pedido1 = document.querySelector('.itemdopedido h2');
             pedido1.innerHTML = `${ComidaNome}`
+            ComidaValor = ComidaValor.toFixed(2).replace('.', ',');
             const pedido12 = document.querySelector('.itemdopedido h3');
-            pedido12.innerHTML = `${ComidaValor}`
+            pedido12.innerHTML = `R$ ${ComidaValor}`
 
             const pedido2 = document.querySelector('.itemdopedido2 h2');
             pedido2.innerHTML = `${BebidaNome}`
+            BebidaValor = BebidaValor.toFixed(2).replace('.', ',');
             const pedido22 = document.querySelector('.itemdopedido2 h3');
-            pedido22.innerHTML = `${BebidaValor}`
+            pedido22.innerHTML = `R$ ${BebidaValor}`
 
             const pedido3 = document.querySelector('.itemdopedido3 h2');
             pedido3.innerHTML = `${SobremesaNome}`
+            SobremesaValor = SobremesaValor.toFixed(2).replace('.', ',');
             const pedido32 = document.querySelector('.itemdopedido3 h3');
-            pedido32.innerHTML = `${SobremesaValor}`
-
-            //const pedido32 = document.querySelector('.precodopedido h3');
-            //pedido32.innerHTML = `${ValorTotal}`
+            pedido32.innerHTML = `R$ ${SobremesaValor}`
+            
+            ValorTotal = ValorTotal.toFixed(2).replace('.', ',');
+            const precofinal = document.querySelector('.precodopedido h3');
+            precofinal.innerHTML = `R$ ${ValorTotal}`
             }
         }    
     }
 }
+
 
 function enviarpedido(){
     const enviar = document.querySelector('.envio');
