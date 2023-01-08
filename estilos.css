@@ -3,9 +3,19 @@ body{
     background-color: #E5E5E5;
     
 }
-.transparencia{
-    opacity: 0.4;
+.escondido{
+    display: none;
 }
+.caixa{
+    background-color: white;
+    opacity: 0.7;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    
+}
+
 
 header{
     background-color: #CF2B2B;
@@ -162,8 +172,7 @@ ion-icon {
     align-items: center;
     text-align: center;
     letter-spacing: 0.018em;
-
-color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 .selecionado{
@@ -174,9 +183,7 @@ color: #FFFFFF;
     opacity: 1;
 }
 
-.escondido{
-    display: none;
-}
+
 .confirmacao-pedido{
     width: 377px;
     height: 353px;
@@ -194,6 +201,7 @@ color: #FFFFFF;
     box-sizing: border-box;
     padding-top: 21px;
     padding-bottom: 21px;
+    z-index: 3;
 }
 
 
@@ -260,4 +268,6 @@ color: #FFFFFF;
     text-align: center;
     letter-spacing: 0.018em;
     color: #FFFFFF;
+    background: #50D074;
+    border-width: 0;
 }

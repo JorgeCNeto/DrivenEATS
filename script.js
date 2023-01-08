@@ -69,14 +69,15 @@ function continuar(){
     if ( comida !== undefined){
         if ( bebida !== undefined ){
             if ( sobremesa !== undefined ) {
+                       
              
-            
-            // ocultar o painel de seleção de jogo e qtde de jogadores
-            //const painel = document.querySelector('.selecionar-jogo');
-            //painel.classList.add('escondido');
-            //document.querySelector('.selecionar-jogo').classList.add('escondido');
-
-            // exibir o painel de carregando o jogo 
+            const painel = document.querySelector('.alternar');
+            painel.classList.remove('escondido');
+            const opaco = document.querySelector('.caixa');
+            opaco.classList.remove('escondido');
+           
+           
+                       // exibir o painel de carregando o jogo 
            // const overlay = document.querySelector('.loading-overlay');
             //overlay.classList.remove('escondido');
 
@@ -88,6 +89,7 @@ function continuar(){
         }
     }
 }
+
 
 function verificadordecompra(){
    
@@ -103,3 +105,16 @@ function verificadordecompra(){
     }
 }
 
+function enviarpedido(){
+    const enviar = document.querySelector('.envio');
+    enviar.encodeURIComponent('https://wa.me/5599999999999');
+
+}
+
+function cancelar(){
+    
+    const cancelamento = document.querySelector('.alternar');
+    cancelamento.classList.add('escondido');
+    const opaco = document.querySelector('.caixa');
+    opaco.classList.add('escondido');
+}

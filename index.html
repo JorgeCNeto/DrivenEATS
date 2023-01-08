@@ -13,7 +13,8 @@
 
 </head>
 <body>
-    <header>
+    <div class="caixa escondido"></div>
+       <header>
         <h1>DrivenEats</h1>
         <h2>Sua comida em 6 minutos</h2>
     </header>
@@ -123,7 +124,8 @@
             Selecione os 3 itens para fechar o pedido
         </button>
     </article>
-    <article class="confirmacao-pedido escondido">
+    <article class="alternar escondido">
+        <div class="confirmacao-pedido">
         <div>
             <h1>Confirme seu pedido</h1>
         </div>
@@ -145,12 +147,13 @@
             <h3>preco</h3>
         </div>
         </div>
-        <button onclick="enviarpedido" class="envio">
+        <button onclick="enviarpedido()" class="envio">
             Tudo certo, pode pedir!
         </button>
-        <h4 onclick="cancelar" class="cancelamento">Cancelar</h4>
+        <button onclick="cancelar()" class="cancelamento">Cancelar</button>
+    </div>
     </article>
-
+    
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
