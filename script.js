@@ -10,7 +10,7 @@ function desmarcacaoAnterior(seletor){
 }
 
 let comida;
-let ComidaNome;
+let comidaNome;
 let ComidaValor;
 
 function selecionarcomida(comidaselecionada){
@@ -22,7 +22,7 @@ function selecionarcomida(comidaselecionada){
     comida = comidaselecionada.innerHTML;
    
     const alimentos = document.querySelector('.selecionado .alimento');
-    ComidaNome = alimentos.innerHTML;
+    comidaNome = alimentos.innerHTML;
        
     
     ComidaValor = document.querySelector('.selecionado .preco');
@@ -80,30 +80,36 @@ function selecionarsobremesa(sobremesaselecionada){
 
 }
 
+let NomeCliente;
+let Endereco;
 function continuar(){
 
     if ( comida !== undefined){
         if ( bebida !== undefined ){
             if ( sobremesa !== undefined ) {
                        
-             
-            const painel = document.querySelector('.alternar');
-            painel.classList.remove('escondido');
-            const opaco = document.querySelector('.caixa');
-            opaco.classList.remove('escondido');
-          
+                NomeCliente = prompt("Qual o seu nome?");
+                Endereco = prompt("Qual o seu endereço?");
+                const painel = document.querySelector('.alternar');
+                painel.classList.remove('escondido');
+                const opaco = document.querySelector('.caixa');
+                opaco.classList.remove('escondido');
+                
             }
         }
     }
 }
 
 let ValorTotal;
+
+
 function verificadordecompra(){
    
     if ( comida !== undefined ){
         if ( bebida !== undefined){
             if ( sobremesa !== undefined ) {
             
+          
             ComidaValor = parseFloat(ComidaValor);
             BebidaValor = parseFloat(BebidaValor);
             SobremesaValor = parseFloat(SobremesaValor);
@@ -119,7 +125,7 @@ function verificadordecompra(){
             botaoContinuar.innerHTML = "Fechar pedido";
             
             const pedido1 = document.querySelector('.itemdopedido h2');
-            pedido1.innerHTML = `${ComidaNome}`
+            pedido1.innerHTML = `${comidaNome}`
             ComidaValor = ComidaValor.toFixed(2).replace('.', ',');
             const pedido12 = document.querySelector('.itemdopedido h3');
             pedido12.innerHTML = `R$ ${ComidaValor}`
@@ -136,9 +142,12 @@ function verificadordecompra(){
             const pedido32 = document.querySelector('.itemdopedido3 h3');
             pedido32.innerHTML = `R$ ${SobremesaValor}`
             
-            ValorTotal = ValorTotal.toFixed(2).replace('.', ',');
+            const CASAS_DECIMAIS = 2;
+            ValorTotal = ValorTotal.toFixed(CASAS_DECIMAIS).replace('.', ',');
             const precofinal = document.querySelector('.precodopedido h3');
             precofinal.innerHTML = `R$ ${ValorTotal}`
+
+            
             }
         }    
     }
@@ -148,10 +157,13 @@ function verificadordecompra(){
 function enviarpedido(){
     
     var mensagem = "Olá,%20gostaria%20de%20fazer%20o%20pedido:%0a"
-                    + "-%20Prato:%20"+ ComidaNome +"%0a"
+                    + "-%20Prato:%20"+ comidaNome +"%0a"
                     + "-%20Bebida:%20" + BebidaNome +"%0a"
                     + "-%20Sobremesa:%20" + SobremesaNome +"%0a"
-                    + "Total:%20R$%20"+ ValorTotal
+                    + "Total:%20R$%20"+ ValorTotal + "%0a%0a"
+                    + "Nome:%20"+ NomeCliente +"%0a"  
+                    + "Endereço:%20"+ Endereco
+
     window.location.href="https://wa.me/5521983422814?text=" + mensagem;
     return false;
 }
