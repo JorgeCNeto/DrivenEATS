@@ -146,9 +146,14 @@ function verificadordecompra(){
 
 
 function enviarpedido(){
-    const enviar = document.querySelector('.envio');
-    enviar.encodeURIComponent('https://wa.me/5599999999999');
-
+    
+    var mensagem = "Olá,%20gostaria%20de%20fazer%20o%20pedido:%0a"
+                    + "-%20Prato:%20"+ ComidaNome +"%0a"
+                    + "-%20Bebida:%20" + BebidaNome +"%0a"
+                    + "-%20Sobremesa:%20" + SobremesaNome +"%0a"
+                    + "Total:%20R$%20"+ ValorTotal
+    window.location.href="https://wa.me/5521983422814?text=" + mensagem;
+    return false;
 }
 
 function cancelar(){
@@ -158,3 +163,4 @@ function cancelar(){
     const opaco = document.querySelector('.caixa');
     opaco.classList.add('escondido');
 }
+
