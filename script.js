@@ -164,7 +164,7 @@ function enviarpedido(){
                     + "Nome:%20"+ NomeCliente +"%0a"  
                     + "Endereço:%20"+ Endereco
 
-    window.location.href="https://wa.me/5521983422814?text=" + mensagem;
+    window.location.href="https://wa.me/559999999999?text=" + mensagem;
     return false;
 }
 
